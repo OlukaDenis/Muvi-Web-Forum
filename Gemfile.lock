@@ -165,7 +165,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
     public_suffix (4.0.1)
-    puma (4.1.0)
+    puma (4.3.1)
       nio4r (~> 2.0)
     rack (2.0.7)
     rack-proxy (0.6.5)
@@ -287,7 +287,7 @@ DEPENDENCIES
   minitest (= 5.13.0)
   minitest-reporters (= 1.1.14)
   pg (= 0.20.0)
-  puma (= 4.1)
+  puma (= 4.3.1)
   rails (= 6.0.1)
   rails-controller-testing (= 1.0.4)
   rubocop (= 0.77.0)
@@ -302,6 +302,9 @@ DEPENDENCIES
   web-console (= 3.3.0)
   webpacker (= 4.0)
   will_paginate (= 3.2.1)
+
+RUBY VERSION
+   ruby 2.6.3p62
 
 BUNDLED WITH
    1.17.3

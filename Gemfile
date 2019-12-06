@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# ruby '2.6.3'
+ruby '2.6.3'
 
 gem 'rails', '6.0.1'
 gem 'bcrypt', '3.1.13'
@@ -14,7 +14,7 @@ gem 'mini_magick', '4.9.5'
 gem 'will_paginate', '3.2.1'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'bootstrap', '4.4.1'
-gem 'puma', '4.1'
+gem 'puma', '4.3.1'
 gem 'font-awesome-rails', '4.7.0.5'
 gem 'sprockets-rails', '3.2.1'
 gem 'sass-rails', '6'
