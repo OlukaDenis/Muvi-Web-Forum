@@ -1,0 +1,34 @@
+<% provide(:title, "Home") %>
+<div class="jumbotron jumbotron-fluid text-center">
+  <div class="container">
+    <h1>Welcome to Muvi Forum</h1>      
+    <p>Muvi is a movie guide android app that keeps you up to date with your favorite movies and tv shows</p>
+    <button class="btn btn-primary">Get Started</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8">
+    <h2>Recent Questions</h2>
+      <% @questions.each do |question|%>
+      <div class="card card-body bg-light p-3">
+        <h4> <%= question.title %></h4>
+        <p><%= question.body %></p>
+          <div>
+            <p><i>Answers</i></p>
+            <span class="badge badge-primary"></span>
+          </div>
+          <div>
+            <%= link_to "Read More", question_path(question), :class => 'btn btn-primary btn-sm'%>
+          </div>
+        </div>
+        <br>
+        <%end%>
+    </div>
+
+    <div class="col-lg-4">
+      <h3> More Questions </h3>
+    </div>
+  </div>
+</div>

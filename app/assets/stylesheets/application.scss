@@ -15,3 +15,11 @@
  */
 
 @import "bootstrap";
+
+$font-stack: Helvetica, sans-serif;
+$primary-color: #efefef;
+
+body {
+  font: 100% $font-stack;
+  background-color: $primary-color;
+}
