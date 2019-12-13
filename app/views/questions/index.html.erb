@@ -1,4 +1,5 @@
 <% provide(:title, "Home") %>
+
 <div class="jumbotron jumbotron-fluid text-center">
   <div class="container">
     <h1>Welcome to Muvi Forum</h1>      
@@ -7,10 +8,13 @@
   </div>
 </div>
 
+
 <div class="container">
   <div class="row">
     <div class="col-lg-8">
-    <h2>Recent Questions</h2>
+    <div class="card card-header bg-light">
+      <h2>Recent Questions</h2>
+    </div>
       <% @questions.each do |question|%>
       <div class="card card-body bg-light p-3">
         <h4> <%= question.title %></h4>
@@ -28,7 +32,15 @@
     </div>
 
     <div class="col-lg-4">
-      <h3> More Questions </h3>
+      <div class="card">
+        <div class="card-header text-center">
+          <h5> Frequently asked </h5>
+        </div>
+
+        <div class="card-body">
+          </div>
+
+      </div>
     </div>
   </div>
 </div>
