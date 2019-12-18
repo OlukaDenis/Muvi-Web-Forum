@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   get 'static_pages/home'
   get 'static_pages/help'
   get 'static_pages/about'
-  resources :questions
+  resources :questions do
+    resources :answers
+  end
 end
