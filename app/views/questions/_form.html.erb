@@ -1,15 +1,4 @@
-<% provide(:title, "New Question") %>
-<div class="jumbotron jumbotron-fluid text-center">
-  <div class="container">
-    <h1>New Question</h1>
- </div>
-</div>      
-    
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3"></div>
-        <div class="col-lg-7">
-            <%= form_with scope: :question, url: questions_path, local: true do |form| %>
+<%= form_with model: @question, local: true  do |form| %>
 
             <% if @question.errors.any? %>
               <div class="errors_def" id="error_explanation">
@@ -41,12 +30,8 @@
                 <%= form.text_field :user_id, :class => 'form-control' %>
               </p>
 
-              <p> 
-                <%= form.submit 'Post Question', :class => 'btn btn-primary' %>
-              </p>
+              <div> 
+                <%= form.submit 'Update', :class => 'btn btn-info' %>
+                <%= link_to 'Cancel', question_path(@question), :class => 'btn btn-outline-light text-dark' %>
+              </div>
           <% end %>
-        </div>
-        <div class="col-lg-2"></div>
-      </div>
-    </div>
- 
