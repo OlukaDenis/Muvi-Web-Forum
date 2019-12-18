@@ -15,3 +15,13 @@
  */
 
 @import "bootstrap";
+@import "font-awesome";
+
+$font-stack: "Source Sans Pro", sans-serif;
+$primary-color: #efefef;
+
+body {
+  font: 100% $font-stack;
+  background-color: $primary-color;
+  padding-top: 56px;
+}

@@ -71,7 +71,7 @@ GEM
       sassc-rails (>= 2.0.0)
     bootstrap-will_paginate (1.0.0)
       will_paginate
-    builder (3.2.3)
+    builder (3.2.4)
     byebug (11.0.1)
     carrierwave (2.0.2)
       activemodel (>= 5.0.0)
