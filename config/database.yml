@@ -22,4 +22,11 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  <<: *default
+  host: localhost
+  adapter: postgresql
+  encoding: utf8
+  database: muvi_production
+  pool: 5
+  username: <%= ENV['MUVI_DATABASE_USER'] %>
+  password: <%= ENV['MUVI_DATABASE_PASSWORD'] %>
