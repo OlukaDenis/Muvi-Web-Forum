@@ -22,7 +22,7 @@ test:
 
 production:
   <<: *default
-  <<: *default
+  # <<: *default
   host: localhost
   adapter: postgresql
   encoding: utf8
