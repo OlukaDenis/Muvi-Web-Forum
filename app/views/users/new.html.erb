@@ -9,16 +9,16 @@
 <div class="container">
   <div id="signup-card" class="card">
     <div  class="card-body">
-      <%= form_with scope: :question, url: questions_path, local: true do |form| %>
+      <%= form_with scope: :user, url: "#", local: true do |form| %>
           <h6 class="text-center">Create a free account for yourself</h6>
-            <% if @question.errors.any? %>
+            <% if @user.errors.any? %>
               <div class="errors_def" id="error_explanation">
                 <h4>
-                  <%= pluralize(@question.errors.count, "error") %> 
-                  prohibited this question from being saved:
+                  <%= pluralize(@user.errors.count, "error") %> 
+                  prohibited this user from being saved:
                 </h4>
                 <ul>
-                  <% @question.errors.full_messages.each do |msg| %>
+                  <% @user.errors.full_messages.each do |msg| %>
                     <li>
                       <div class="alert alert-danger"> <%= msg %></div>
                     </li>

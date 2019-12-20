@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def new
-     @question = Question.new
+     @user = User.new
   end
 end
