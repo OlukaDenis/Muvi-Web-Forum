@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+  http_basic_authenticate_with name: "denis", password: "15qwerty", 
+  except: [:index, :show]
   def index
     @questions = Question.all
   end
