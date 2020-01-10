@@ -3,6 +3,7 @@ class QuestionsController < ApplicationController
   except: [:index, :show]
   def index
     @questions = Question.all
+    # render json: @questions
   end
 
   def create
@@ -34,6 +35,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    # render json: @question
   end
 
   def destroy
