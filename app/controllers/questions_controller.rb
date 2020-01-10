@@ -1,9 +1,6 @@
 class QuestionsController < ApplicationController
-  http_basic_authenticate_with name: "denis", password: "15qwerty", 
-  except: [:index, :show]
   def index
     @questions = Question.all
-    # render json: @questions
   end
 
   def create
@@ -35,7 +32,6 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    # render json: @question
   end
 
   def destroy

@@ -9,12 +9,6 @@
           <div class="card-body bg-light">
             <p><%= @question.body%></p>
 
-            <h2>Answers</h2>
-            <%= render @question.answers%>
-
-            <h2>Add your answer:</h2>
-              <%= render 'answers/form'%>
-
             <div>
             <%= link_to ' Answer', '#', :class => 'btn btn-default fa fa-comment' %>
             <%= link_to ' Edit', edit_question_path(@question), :class => 'btn btn-default fa fa-edit ' %>

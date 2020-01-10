@@ -14,73 +14,14 @@
  *= require_self
  */
 
-// @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 
 $font-stack: "Source Sans Pro", sans-serif;
 $primary-color: #efefef;
-$gray: rgb(151, 151, 151);
-$dark-gray: #c4c4c4;
 
 body {
   font: 100% $font-stack;
   background-color: $primary-color;
   padding-top: 56px;
-}
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover {
-    color: #fff;
-    text-decoration: none;
-  }
-}
-
-/* footer */
-
-footer {
-  margin-top: 45px;
-  padding-top: 40px;
-  padding-bottom: 20px;
-  background-color: #222;
-  border-top: 1px solid $dark-gray;
-  color: $gray;
-
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    .footer-info {
-      font-size: 14px;
-    }
-
-    a {
-      color: rgb(109, 109, 109);
-      text-decoration: none;
-
-      &:hover {
-        color: rgb(204, 204, 204);
-      }
-    }
-
-    .footer-nav {
-      ul {
-        list-style: none;
-
-        li {
-          display: inline-block;
-          margin-left: 15px;
-        }
-      }
-    }
-  }
 }
