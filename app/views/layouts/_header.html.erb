@@ -9,16 +9,15 @@
       <li class="nav-item"> <%= link_to "About", about_path, :class => 'nav-link'%></li>
       <% if logged_in? %>
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-target="#my-target">
-          Account
-        </a>
-        <div id="my-target" class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Account
+          </a>
+          <div class="dropdown-menu">
+            <%= link_to "Profile", "#", :class => 'dropdown-item'%>
+            <%= link_to "Settings", "#", :class => 'dropdown-item'%>
+            <%= link_to "Logout", "#", :class => 'dropdown-item'%>
+          </div>
+        </li>
       <% else %>
         <li class="nav-item pr-50"> <%= link_to "SignUp", signup_path, :class => 'nav-link'%></li>
         <li class="nav-item"> <%= link_to "Login", login_path, :class => 'nav-link btn btn-primary btn-sm text-white'%></li>
