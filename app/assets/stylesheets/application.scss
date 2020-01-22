@@ -12,9 +12,11 @@
  *
  *= require_tree .
  *= require_self
+ * require jquery
+ *require bootstrap
+ *require turbolinks
  */
 
-// @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
 
