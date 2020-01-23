@@ -1,0 +1,25 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#signup-card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+
+/* Form errors explanantion */
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  // @extend .has-error;
+  .form-control {
+    color: rgb(163, 31, 31);
+  }
+}

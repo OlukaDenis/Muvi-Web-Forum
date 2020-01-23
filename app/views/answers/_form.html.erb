@@ -1,0 +1,13 @@
+<%= form_with(model: [ @question, @question.answers.build ], local: true) do |form| %>
+  <p>
+    <%= form.label :answerer %><br>
+    <%= form.text_field :answerer %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -1,13 +1,19 @@
 class QuestionsController < ApplicationController
+  http_basic_authenticate_with name: "denis", password: "15qwerty", 
+  except: [:index, :show]
   def index
     @questions = Question.all
+    # render json: @questions
   end
 
   def create
     @question = Question.new(question_params)
     if @question.save
+      # format.json { render json: @question, status: :created }
+      
       redirect_to @question
     else
+      # format.json { render json: @question.errors, status: :unprocessable_entity }
       render 'new'
     end
   end
@@ -32,6 +38,7 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    # render json: @question
   end
 
   def destroy
