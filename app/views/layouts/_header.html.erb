@@ -13,9 +13,10 @@
             Account
           </a>
           <div class="dropdown-menu">
-            <%= link_to "Profile", "#", :class => 'dropdown-item'%>
+            <%= link_to "Profile", current_user, :class => 'dropdown-item'%>
             <%= link_to "Settings", "#", :class => 'dropdown-item'%>
-            <%= link_to "Logout", "#", :class => 'dropdown-item'%>
+            <%# <li class="divider"></li> %>
+            <%= link_to "Logout", logout_path, method: :delete, :class => 'dropdown-item'%>
           </div>
         </li>
       <% else %>
