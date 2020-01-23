@@ -17,7 +17,8 @@
 @import "bootstrap";
 @import "font-awesome";
 
-$font-stack: "Source Sans Pro", sans-serif;
+// $heading-font: "Fira Sans Condensed", sans-serif;
+// $font-stack: 'Titillium Web', sans-serif;
 $primary-color: #efefef;
 $gray: rgb(151, 151, 151);
 $dark-gray: #c4c4c4;
@@ -29,9 +30,13 @@ $dark-gray: #c4c4c4;
 }
 
 body {
-  font: 100% $font-stack;
+  font-family: 'Titillium Web', sans-serif;
   background-color: $primary-color;
   margin-top: 65px;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: "Fira Sans Condensed", sans-serif;
 }
 
 #logo {
@@ -110,6 +115,21 @@ input, textarea, select, .uneditable-input {
 
 input {
   height: auto !important;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    font-size: 14px;
+    font-weight: normal;
+    cursor: pointer;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  cursor: pointer;
 }
 
 
