@@ -12,9 +12,9 @@ class User < ApplicationRecord
   PASSWORD_FORMAT = /\A(?=.{6,})(?=.*\d)(?=.*[a-z])/x #Contains atleast one uppercase, one lowercase and one digit
   validates :password, presence: true,
                       length: { maximum: 20 },
-                      format:  { with: PASSWORD_FORMAT } 
+                      format:  { with: PASSWORD_FORMAT },
+                      allow_nil: true
 
-  class << self
     # Returns the hash digest of the given string.
     def User.digest(string)
       cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -26,7 +26,6 @@ class User < ApplicationRecord
     def User.new_token
       SecureRandom.urlsafe_base64
     end
-  end
 
   def remember
     self.remember_token = User.new_token

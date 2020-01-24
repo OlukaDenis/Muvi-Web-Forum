@@ -1,0 +1,20 @@
+<% provide(:title, 'All Users') %>
+<div class="container">
+    <div class="row edit-row">
+        <div id="users-card" class="card col-lg-12">
+        <div  class="card-body">
+        <h1 class="text-center">All users</h1>
+        <%= will_paginate %>
+            <ul class="users">
+                <% @users.each do |user| %>
+                    <li>
+                    <%= gravatar_for user, size: 50 %>
+                    <%= link_to user.name, user %>
+                    </li>
+                <% end %>
+            </ul>
+        <%= will_paginate %>
+        </div>
+        </div>
+    </div>
+</div>

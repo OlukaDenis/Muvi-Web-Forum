@@ -69,10 +69,8 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 1.14.3, < 2)
       sassc-rails (>= 2.0.0)
-    bootstrap-will_paginate (1.0.0)
-      will_paginate
     builder (3.2.4)
-    byebug (11.1.0)
+    byebug (11.1.1)
     carrierwave (2.0.2)
       activemodel (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -265,6 +263,8 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
     will_paginate (3.2.1)
+    will_paginate-bootstrap4 (0.2.2)
+      will_paginate (~> 3.0, >= 3.0.0)
     zeitwerk (2.2.2)
 
 PLATFORMS
@@ -274,7 +274,6 @@ DEPENDENCIES
   bcrypt (= 3.1.13)
   bootsnap (= 1.4.2)
   bootstrap (= 4.4.1)
-  bootstrap-will_paginate (= 1.0.0)
   byebug
   carrierwave (= 2.0.2)
   coffee-rails (= 5.0.0)
@@ -306,6 +305,7 @@ DEPENDENCIES
   web-console (= 3.3.0)
   webpacker (= 4.0)
   will_paginate (= 3.2.1)
+  will_paginate-bootstrap4 (= 0.2.2)
 
 RUBY VERSION
    ruby 2.6.3p62
