@@ -9,7 +9,7 @@
       <li><%= link_to "Users", users_path, class: 'nav-link' %></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            Account
+            <%= current_user.name%>
           </a>
           <div class="dropdown-menu">
             <%= link_to "Profile", current_user, :class => 'dropdown-item'%>

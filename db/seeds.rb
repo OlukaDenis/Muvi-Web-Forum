@@ -8,10 +8,11 @@
 
 
 # Sample users using faker gem
-User.create!(name:  "Test User",
-    email: "example@iamdenis.org",
+User.create!(name:  "Denis Oluka",
+    email: "olukadeno@gmail.com",
     password:              "Password1",
-    password_confirmation: "Password1")
+    password_confirmation: "Password1",
+    admin: true)
 
 50.times do |n|
     name  = Faker::Name.name

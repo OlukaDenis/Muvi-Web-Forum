@@ -58,3 +58,11 @@ $dark-gray: #c4c4c4;
   margin-left: 40px;
   margin-top: 30px;
 }
+
+/* Users list and delete */
+.users{
+  li{
+    display: flex;
+    justify-content: space-between;
+  }
+}
