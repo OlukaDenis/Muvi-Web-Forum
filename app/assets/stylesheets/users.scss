@@ -1,10 +1,21 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$primary-color: #efefef;
+$gray: rgb(151, 151, 151);
+$dark-gray: #c4c4c4;
 
 #signup-card {
   max-width: 600px;
   margin: 0 auto;
+}
+
+.edit-row{
+  margin-top: 100px;
+  .gravatar_edit{
+    margin-top: 50px;
+    margin-bottom: 80px;
+  }
 }
 
 
@@ -21,5 +32,37 @@
   // @extend .has-error;
   .form-control {
     color: rgb(163, 31, 31);
+  }
+}
+
+/* Password hint */
+.password-hint{
+  font-size: 12px;
+  font-weight: 200;
+}
+
+/* All Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $dark-gray;
+  }
+}
+
+/* Pagination */
+.pagination{
+  margin-left: 40px;
+  margin-top: 30px;
+}
+
+/* Users list and delete */
+.users{
+  li{
+    display: flex;
+    justify-content: space-between;
   }
 }

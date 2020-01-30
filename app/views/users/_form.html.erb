@@ -1,0 +1,21 @@
+<%= form_for(@user, url: signup_path) do |form| %>
+<%= render 'shared/error_messages', object: @user %>
+    
+    <%= form.label :name %>
+    <%= form.text_field :name, :class => 'form-control' %>
+
+    <%= form.label :email %>
+    <%= form.text_field :email, :class => 'form-control' %>
+
+    <%= form.label :password %>
+    <%= form.password_field :password, :class => 'form-control' %>
+
+    <div class="password-hint">
+        <p>Passwords must contain at least 6 characters and contain at least one uppercase, one lowercase and a number!</p>
+    </div>
+
+    <%= form.label :confirm_password %>
+    <%= form.password_field :confirm_password, :class => 'form-control' %>
+
+    <%= form.submit yield(:button_text), class: yield(:button_class) %>                
+<% end %>
