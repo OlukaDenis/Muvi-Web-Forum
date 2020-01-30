@@ -11,7 +11,8 @@ Rails.application.configure do
   config.eager_load = true
 
   # Include the server host
-  config.hosts << "premarsystems.com"
+  # config.hosts << "premarsystems.com"
+  config.hosts << "muvi-web-forum.herokuapp.com"
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
