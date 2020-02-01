@@ -1,56 +1,61 @@
-<!--% provide(:title, "Home") %-->
-<div class="jumbotron jumbotron-fluid" id="hero-area">
+
+
+<div class="hero container-fluid" id="hero-area">
   <div class="container">
-  <section class=hero-section>
-    <div class="hero-info">
-      <h1>Muvi Web Forum</h1>      
-      <p>Muvi is a movie guide android app that keeps you up to date with your favorite movies and tv shows</p>
-      <%= link_to "Join Forum", questions_path, :class => 'btn hero-button'%>
-    </div>
-    <div class="hero-image">
-      <!--img src="https://static.wixstatic.com/media/fae09a_474ad631c8174a98899ed04b4e8d088e~mv2.png"-->
-      <%= image_tag("muvi_frame_1.png") %>
-    </div>
-  </section>
-   
+      <section class=hero-section>
+        <div class="hero-info">
+          <h1>Muvi Web Forum</h1>      
+          <p>Muvi is a movie guide android app that keeps you up to date with your favorite movies and tv shows</p>
+          <%= link_to "Join Forum", questions_path, :class => 'btn hero-button'%>
+        </div>
+        <div class="hero-image">
+          <!--img src="https://static.wixstatic.com/media/fae09a_474ad631c8174a98899ed04b4e8d088e~mv2.png"-->
+          <%= image_tag("muvi_frame_1.png") %>
+        </div>
+      </section>
   </div>
 </div>
 
-<section class="trending">
+
+<section class="trending container-fluid">
   <div class="container">
     <div class="row">
-      <h2>Trending </div>
-      <p>Find your next favorite movies & TV shows by searching, filtering and exploring catalogues. </p>
+      <div class="trending-info col-md-6">
+        <h2>Trending </h2>
+        <p>Find your next favorite movies & TV shows by searching, filtering and exploring catalogues. </p>
+      </div>
     </div>
-  </div>
-  
+  </div>  
 </section>
 
-<section class="organize">
+<section class="organize container-fluid">
   <div class="container">
-    <div class="organize-container">
-      <div class="organize-image">
-        <%= image_tag("muvi_frame_2.png") %>
+      <div class="organize-container">
+        <div class="organize-image">
+          <%= image_tag("muvi_frame_2.png") %>
+        </div>
+        <div class="organize-info">
+          <h2>Organize </h2>
+          <p>Add what you want to watch and mark your favorite content.  </p>
+        </div>
       </div>
-      <div class="organize-info">
-        <h2>Organize </h2>
-        <p>Add what you want to watch and mark your favorite content.  </p>
-      </div>
-    </div>
   </div>
+</section>
 
-  <section class="play-store">
-  <div class="container text-center">
-    <div class="store-container">
-      <div class="store-heading">
-        <h1>Try Muvi today</h1>
-        <p>Download Muvi and take your best movie & TV show experience.</p>
+<section class="play-store container-fluid">
+  <div class="container ">
+
+      <div class="store-container text-center">
+        <div class="store-heading">
+          <h1>Try Muvi today</h1>
+          <p>Download Muvi and take your best movie & TV show experience.</p>
+        </div>
+        <div class="store-image">
+          <a href="https://play.google.com/store/apps/details?id=com.premar.muvi"><img src="https://static.wixstatic.com/media/fae09a_b592a5ab2b9c47c4a43ef9c046cb0084~mv2.png"></a>
+        </div>
       </div>
-      <div class="store-image">
-        <a href="https://play.google.com/store/apps/details?id=com.premar.muvi"><img src="https://static.wixstatic.com/media/fae09a_b592a5ab2b9c47c4a43ef9c046cb0084~mv2.png"></a>
-      </div>
-    </div>
+
+   
   </div>
-  
 </section>
 
