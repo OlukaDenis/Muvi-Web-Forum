@@ -1,0 +1,7 @@
+Muvi Account Activation
+
+Hi <%= @user.name %>,
+
+Thanks for creating an account! You are left with few steps. Please follow the link below to activate your account:
+
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
