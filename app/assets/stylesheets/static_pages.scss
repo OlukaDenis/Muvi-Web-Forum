@@ -1,3 +1,109 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+$border-color: #2296F3;
+$bg-one: #343a40;
+$bg-two: #212529;
+$white-color: #eee;
+/* Hero area */
+#hero-area {
+background-color: $bg-one;
+color: $white-color;
+height: 400px;
+
+.hero-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .hero-info{
+        padding-top: 50px;
+
+    h1{
+        text-transform: uppercase;
+    }
+    
+    .hero-button {
+        color: $white-color;
+        border: 1px solid $white-color;
+        box-shadow: 5px 5px 10px $bg-two;
+    
+        &:hover {
+        color: $bg-one;
+        background-color: $white-color;
+        }
+    }
+    }
+
+    .hero-image {
+    position: relative;
+    
+    img {
+        z-index: 10;
+        width: 600px;
+        height: 100%;
+    }
+    }
+    
+} 
+
+}
+
+.trending {
+    height: 500px;
+    padding-top: 100px;
+
+    h2{
+        border-left: 8px solid $border-color;
+        padding-left: 10px;
+    }
+}
+
+.organize {
+    background-color: $bg-two;
+    height: 800px;
+    padding-top: 100px;
+    color: $white-color;
+
+    .organize-container{
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-evenly;
+
+        .organize-image{
+            img{
+                width: 600px;
+                height: 100%;
+            }
+        }
+    
+        .organize-info{
+            margin-left: 50px;
+            padding-top: 100px;
+            h2{
+                border-left: 8px solid $border-color;
+                padding-left: 10px;
+            }
+        }
+    }
+
+    
+}
+
+/*Play store */
+.play-store {
+    background-color: $bg-one;
+    height: 400px;
+    margin-top: 100px;
+    padding-top: 50px;
+    color: $white-color;
+
+    .store-container{
+        .store-image {
+            cursor: pointer;
+            margin-top: 50px;
+        }
+    }
+}

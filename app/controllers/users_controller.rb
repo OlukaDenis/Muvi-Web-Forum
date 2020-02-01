@@ -22,9 +22,11 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to the Muvi Forum, #{@user.name}"
-      redirect_to @user
+      # log_in @user
+      UserMailer.account_activation(@user).deliver_now
+      flash[:info] = "Please check your email to activate your account"
+      # redirect_to @user
+      redirect_to root_url
     else
       flash[:danger] = "Error occured, please try again!"
       render 'new'
