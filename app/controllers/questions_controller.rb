@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
-  http_basic_authenticate_with name: "denis", password: "15qwerty", 
-  except: [:index, :show]
+  # http_basic_authenticate_with name: "denis", password: "15qwerty", except: [:index, :show]
+  # before_action :logged_in, except: [:index, :show]
+  
   def index
     @questions = Question.all
     # render json: @questions
