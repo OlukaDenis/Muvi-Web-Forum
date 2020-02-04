@@ -8,6 +8,9 @@ Rails.application.configure do
 
   config.cache_classes = false
 
+  config.action_mailer.delivery_method = :test
+  config.action_mailer.default_url_options = { host: 'http://localhost:3000' }
+
   # Do not eager load code on boot. This avoids loading your whole application
   # just for the purpose of running a single test. If you are using a tool that
   # preloads Rails for running tests, you may have to set it to true.
