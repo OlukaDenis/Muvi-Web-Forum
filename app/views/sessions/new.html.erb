@@ -1,12 +1,11 @@
 <% provide(:title, "Login") %>
 
-<div class="jumbotron jumbotron-fluid text-center">
-  <div class="container">
-    <h1>Login</h1>      
-  </div>
+<div class="text-center heading-section">
+  <%= image_tag("muvilogo.png", class: "img-responsive", id: "muvi-logo") %>
+  <h4>Sign in to Muvi</h4>
 </div>
 
-<div class="container">
+<div class="container content-container">
   <div class="row">
     <div id="signup-card" class="card col-md-6 col-md-offset-3">
       <div  class="card-body">
@@ -19,16 +18,21 @@
             <%= form.label :password %>
             <%= form.password_field :password, :class => 'form-control' %>
 
-            <%= form.label :remember_me, class: "checkbox inline" do %>
-              <%= form.check_box :remember_me %>
-              <span>Remember me on this device</span>              
-            <% end %>
+            <div class="rem-pass">
+              <div >
+                <%= form.label :remember_me, class: "checkbox inline" do %>
+                  <%= form.check_box :remember_me %>
+                  <span>Remember me on this device</span>              
+                <% end %>
+              </div>
+              <%= link_to 'Forgot password?', new_password_reset_path %>
+            </div>
 
             <%= form.submit 'Login', :class => 'btn btn-primary' %>
                 
         <% end %>
 
-        <div>
+        <div class="text-center">
             <p>New user? <%= link_to 'Sign up now!', signup_path%> </p>
         </div>
       </div>
