@@ -19,3 +19,7 @@
 
     <%= form.submit yield(:button_text), class: yield(:button_class) %>                
 <% end %>
+
+<div class="text-center">
+    <p class="mt-20">Already have one? <%= link_to 'Login now!', login_path%> </p>
+</div>

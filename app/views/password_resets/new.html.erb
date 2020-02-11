@@ -1,0 +1,23 @@
+<div class="text-center heading-section">
+  <h1>Password reset</h1>
+  <p> Please enter the email for your account to continue </p>
+</div>
+
+<div class="container content-container">
+  <div class="row">
+    <div id="signup-card" class="card col-md-6 col-md-offset-3">
+      <div  class="card-body">
+        <%= form_for(:password_reset, url: password_resets_path) do |form| %>
+            <% #= render 'shared/error_messages' %>
+
+            <%= form.label :email %>
+            <%= form.text_field :email, :class => 'form-control' %>
+
+            <%= form.submit 'Submit', :class => 'btn btn-primary' %>
+                
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
