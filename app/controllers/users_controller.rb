@@ -11,6 +11,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @questions = @user.questions.paginate(page: params[:page])
+    @feed_items = current_user.feed.paginate(page: params[:page]) if logged_in?
+    
     # render json: @user
     # debugger
   end
@@ -60,15 +63,6 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
-
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
     end
 
     # Confirms the correct user.

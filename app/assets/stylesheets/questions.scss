@@ -19,3 +19,18 @@
 .btn-question{
   margin-bottom: 20px;
 }
+
+/* User new qestion form */
+section {
+  input {
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    margin-bottom: 10px;
+  }
+
+  textarea.form-control {
+    height: 100px;
+  }
+}

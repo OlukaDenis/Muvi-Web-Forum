@@ -1,21 +1,26 @@
 class QuestionsController < ApplicationController
   # http_basic_authenticate_with name: "denis", password: "15qwerty", except: [:index, :show]
-  # before_action :logged_in, except: [:index, :show]
+  before_action :logged_in_user, only: [:create, :destroy, :new]
+  before_action :correct_user,   only: :destroy
   
   def index
-    @questions = Question.all
-    # render json: @questions
+    @questions = Question.paginate(page: params[:page])
+    if logged_in?
+      @question = current_user.questions.build
+      # @feed_items = current_user.feed.paginate(page: params[:page])
+    end
   end
 
   def create
-    @question = Question.new(question_params)
+    # @question = Question.new(question_params)
+    @question = current_user.questions.build(question_params)
     if @question.save
-      # format.json { render json: @question, status: :created }
-      
-      redirect_to @question
+      # format.json { render json: @question, status: :created } 
+      @feed_items = [] #Adding an (empty) @feed_items instance variable to the create action.     
+      redirect_to questions_path
     else
       # format.json { render json: @question.errors, status: :unprocessable_entity }
-      render 'new'
+      render root_url
     end
   end
 
@@ -43,15 +48,18 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params[:id])
-    
-    if @question.destroy
-      redirect_to questions_path
-    end
+    @question.destroy
+    flash[:success] = "Question deleted"
+    redirect_to request.referrer || root_url
   end
 
   private
     def question_params
-      params.require(:question).permit(:title, :body, :user_id)
+      params.require(:question).permit(:title, :body, :picture)
+    end
+
+    def correct_user
+      @question = current_user.questions.find_by(id: params[:id])
+      redirect_to root_url if @question.nil?
     end
 end
