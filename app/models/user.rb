@@ -15,6 +15,7 @@ class User < ApplicationRecord
                       format:  { with: PASSWORD_FORMAT },
                       allow_nil: true
   # validates_confirmation_of :password
+  has_many :questions, dependent: :destroy #when user is destroyed, all user questions will be destroyed too
 
     # Returns the hash digest of the given string.
     def User.digest(string)
@@ -72,6 +73,12 @@ class User < ApplicationRecord
   # Returns true if a password reset has expired.
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  # Defines a proto-feed.
+  # See "Following users" for the full implementation.
+  def feed
+    Question.where("user_id = ?", id)
   end
 
   private

@@ -1,5 +1,5 @@
 <% provide(:title, @user.name) %>
-<div class="container">
+<div class="container top-show-container">
   <div class="row">
     <aside class="col-md-4">
       <section class="user_info">
@@ -9,5 +9,16 @@
         </h1>
       </section>
     </aside>
+
+    <div class="col-md-8">
+    <% if @user.questions.any? %>
+      <h3>Questions Feed (<%= @user.questions.count %>)</h3>
+      <ol class="questions">
+        <%= render @questions %>
+      </ol>
+      <%= will_paginate @questions %>
+    <% end %>
+  </div>
+
   </div>
 </div>
