@@ -1,37 +1,34 @@
 <% provide(:title, "Forum") %>
 
 <div class="container top-container">
-<%= link_to "New Question", new_question_path, class: "btn btn-primary btn-question"%>
   <div class="row">
     <div class="col-lg-8">
-    <div class="card card-header bg-light">
-      <h2>Recent Questions</h2>
-    </div>
-      <% @questions.each do |question|%>
-      <div class="card card-body bg-light p-3">
-        <h4> <%= question.title %></h4>
-        <p><%= question.body %></p>
-          <div>
-            <p><i>Answers</i></p>
-            <span class="badge badge-primary"></span>
-          </div>
-          <div>
-            <%= link_to "Read More", question_path(question), :class => 'btn btn-primary btn-sm'%>
+        <div class="card mb-2">
+          <div class="card-body bg-light p-3">
+            <h3> Recent Questions </h3>
+            <%= render 'shared/all_questions' %>
           </div>
         </div>
-        <br>
-        <%end%>
     </div>
 
     <div class="col-lg-4">
-      <div class="card">
-        <div class="card-header text-center">
-          <h5> Frequently asked </h5>
+      <div class="card ">
+        <div class="card-body bg-light">
+          <% if logged_in? %>
+            <section class="user_info">
+              <%= render 'shared/user_info' %>
+              <hr>
+            </section>
+            <section class="question_form">
+              <%= render 'shared/question_new_form' %>
+            </section>
+          <% else %>
+            <div  class="text-center" >
+              <p>Join the Muvi community today and experience the power of knowledge. Get started now!</p>
+              <%= link_to "Login to Ask Question", login_path, class: "btn btn-primary btn-question"%>
+            </div>
+          <% end %>
         </div>
-
-        <div class="card-body">
-          </div>
-
       </div>
     </div>
   </div>

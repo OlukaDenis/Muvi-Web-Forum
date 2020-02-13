@@ -28,3 +28,11 @@ User.create!(name:  "Denis Oluka",
         activated_at: Time.zone.now)
 end
 
+# Creating dummy questions
+users = User.order(:created_at).take(6)
+50.times do
+    title = Faker::Lorem.sentence(word_count: 3)
+    body = Faker::Lorem.paragraph(sentence_count: 3)
+    users.each { |user| user.questions.create!(title: title, body: body) }
+end
+

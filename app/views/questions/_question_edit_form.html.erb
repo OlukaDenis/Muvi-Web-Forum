@@ -1,0 +1,29 @@
+<%= form_with model: @question, local: true  do |form| %>
+
+  <% if @question.errors.any? %>
+    <div class="errors_def" id="error_explanation">
+      <h4>
+        <%= pluralize(@question.errors.count, "error") %> 
+        prohibited this question from being saved:
+      </h4>
+      <ul>
+        <% @question.errors.full_messages.each do |msg| %>
+          <li>
+            <div class="alert alert-danger"> <%= msg %></div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+          
+  <%= form.label :title %>
+  <%= form.text_field :title, :class => 'form-control' %>
+          
+  <%= form.label :body %><br>
+  <%= form.text_area :body, :class => 'form-control' %>
+        
+  <div> 
+    <%= form.submit 'Update', :class => 'btn btn-info' %>
+    <%= link_to 'Cancel', question_path(@question), :class => 'btn btn-outline-light text-dark' %>
+  </div>
+<% end %>

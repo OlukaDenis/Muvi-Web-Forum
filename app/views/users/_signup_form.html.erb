@@ -1,5 +1,5 @@
 <%= form_for(@user, url: signup_path) do |form| %>
-<%= render 'shared/error_messages', object: @user %>
+<%= render 'shared/error_messages', object: form.object %>
     
     <%= form.label :name %>
     <%= form.text_field :name, :class => 'form-control' %>
@@ -19,3 +19,7 @@
 
     <%= form.submit yield(:button_text), class: yield(:button_class) %>                
 <% end %>
+
+<div class="text-center">
+    <p class="mt-20">Already have one? <%= link_to 'Login now!', login_path%> </p>
+</div>
