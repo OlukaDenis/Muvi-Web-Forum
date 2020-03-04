@@ -11,7 +11,7 @@
         <% if current_user == question.user %>
             <%= link_to " Delete", question, method: :delete,
                                             data: { confirm: "You are about to delete this question. Are you sure?" },
-                                                class: 'fa fa-trash text-danger' %>
+                                                class: 'text-danger' %>
         <% end %>
         </span>
     </li>

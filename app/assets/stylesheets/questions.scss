@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+$primary-color: #efefef;
+$gray: rgb(151, 151, 151);
+$dark-gray: #c4c4c4;
+$blackish: #444;
+$answer-bg: #f3f6f8;
+
 .errors_def ul {
   list-style: none;
 }
@@ -32,5 +38,84 @@ section {
 
   textarea.form-control {
     height: 100px;
+  }
+}
+
+/*------------Question details ------------*/
+.question{
+
+  .question-owner {
+    font-size: 14px;
+    a{
+      color: $blackish;
+    }
+
+    span{
+      color: $gray;      
+      padding-left: 16px;
+    }
+  }
+
+  .question-answers-section {
+    margin-left: 16px;
+
+    .question-answer {
+      display: inline-flex;
+      .user-pic {
+        padding-top: 8px;
+      }
+
+      .answer-info {
+        padding: 6px 8px;
+        background-color: $answer-bg;
+        border-radius: 0 20px 20px 20px;
+
+        a{
+          color: black;
+          font-size: 14px;
+        }
+
+        span{
+          color: $gray;
+          padding-left: 6px;
+          font-size: 12px;
+        }
+
+        p{
+          color: $blackish;
+        }
+      }
+    }
+  }
+
+  #new_answer {
+    display: flex;
+
+    #answer_content {
+      margin-right: 8px;
+    }
+  }
+}
+
+.question-edit {
+
+  span {
+    border-radius: 20px;
+    padding: 6px 12px;
+    margin-right: 8px;
+  }
+
+  .q-edit{
+    background-color: rgb(226, 241, 253);
+    &:hover {
+      background-color: rgb(207, 232, 253);
+    }
+  }
+
+  .q-delete{
+    background-color:rgb(250, 232, 232);
+    &:hover {
+      background-color:rgb(253, 214, 214);
+    }
   }
 }

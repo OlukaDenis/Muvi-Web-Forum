@@ -22,6 +22,8 @@
 $primary-color: #efefef;
 $gray: rgb(151, 151, 151);
 $dark-gray: #c4c4c4;
+$blackish: #444;
+$info-bg: rgba(231, 240, 245, 0.712);
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -224,10 +226,22 @@ aside {
     border-bottom: 1px solid #cac9c9;
   }
   .user {
-    margin-top: 5em;
-    padding-top: 0;
+    padding: 0 0 6px;
     font-size: 14px;
+
+    .user-name{
+      a{
+        color: $blackish;
+        font-weight: bold;
+      }
+    }
+
+    .timestamp {
+      color: $gray;
+      margin-left: 6px;
+    }
   }
+
   .title {
     display: block;
     font-size: 18px;
@@ -238,26 +252,40 @@ aside {
 
   .body {
     display: block;
-    // margin-left: 60px;
-    // img {
-    //   display: block;
-    //   padding: 5px 0;
-    // }
   }
 
   .qtn-picture {
     height: 200px;
   }
-  .timestamp {
-    color: $gray;
-    display: block;
-    font-size: 14px;
-    // margin-left: 60px;
-  }
+  
   .gravatar {
     float: left;
     margin-right: 10px;
     // margin-top: 5px;
+  }
+
+  .question-info {
+    padding-top: 6px;
+    font-size: 14px;
+
+    span{
+      padding: 4px 8px;
+      border-radius: 10px;
+      background-color: $info-bg;
+    }
+
+    .q-answers{
+      margin-right: 6px;
+      color: #777;
+    }
+
+    .q-delete {
+      font-size: 12px;
+      svg{
+        // height: 15px;
+        font-size: 10px;
+      }
+    }
   }
 }
 
@@ -273,4 +301,8 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+.timestamp {
+  color: $gray;
 }

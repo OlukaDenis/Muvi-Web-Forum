@@ -1,12 +1,12 @@
 
 <div class='question-answers-section'>
   <% @question.answers.each do |answer| %>
-    <div class="question-answers">
-    <%= link_to gravatar_for(@question.user, size: 20), @question.user %>
-      <p>
-        <b><%= answer.user.name %>:</b> <%= answer.content %>
-      </p>
-      <span> <%= answer_date(answer) %> </span>
+    <div class="question-answer">
+    <%= link_to gravatar_for(@question.user, size: 20), @question.user, class: "user-pic" %>
+      <div class="answer-info">
+        <b><%= link_to answer.user.name, user_path(@question.user_id)  %></b>  <span> <%= answer_date(answer) %> </span>
+        <p><%= answer.content %></p>
+      </div>
     </div>
   <% end %>
 </div>

@@ -8,7 +8,7 @@
             <% if current_user.admin? && user != current_user %>
                 <%= link_to " Delete", user, method: :delete,
                                             data: { confirm: "You are about to delete #{user.name}. Are you sure?" },
-                                            class: 'fa fa-trash text-danger' %>
+                                            class: 'text-danger' %>
             <% end %>
         </li>
     <% end %>
