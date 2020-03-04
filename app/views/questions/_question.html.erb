@@ -12,13 +12,13 @@
       <%= question.answers.count %> Answers
     </span>
 
-    <span class="q-delete">
-      <% if current_user == question.user %>
-        <i class="fas fa-trash text-danger"></i>
-        <%= link_to " Delete", question, method: :delete,
-                                        data: { confirm: "You are about to delete this question. Are you sure?" },
-                                              class: 'text-danger' %>
-      <% end %>
-    </span>
+    <% if current_user == question.user %>
+      <span class="q-delete">
+          <i class="fas fa-trash text-danger"></i>
+          <%= link_to " Delete", question, method: :delete,
+                                          data: { confirm: "You are about to delete this question. Are you sure?" },
+                                                class: 'text-danger' %>        
+      </span>
+    <% end %>
   </p>
 </li>

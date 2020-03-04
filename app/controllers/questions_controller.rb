@@ -51,7 +51,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
     flash[:success] = "Question deleted"
-    redirect_to request.referrer || root_url
+    redirect_to questions_path
   end
 
   private
