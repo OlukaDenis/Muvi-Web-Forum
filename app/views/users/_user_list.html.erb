@@ -5,7 +5,7 @@
                 <%= gravatar_for user, size: 50 %>
                 <%= link_to user.name, user %>
             </div>
-            <% if current_user.admin? && !current_user?(user) %>
+            <% if current_user.admin? && user != current_user %>
                 <%= link_to " Delete", user, method: :delete,
                                             data: { confirm: "You are about to delete #{user.name}. Are you sure?" },
                                             class: 'fa fa-trash text-danger' %>

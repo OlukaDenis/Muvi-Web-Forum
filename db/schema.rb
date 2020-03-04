@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_13_115956) do
+ActiveRecord::Schema.define(version: 2020_03_02_224635) do
 
   create_table "answers", force: :cascade do |t|
-    t.string "answerer"
-    t.text "body"
     t.integer "question_id", null: false
+    t.integer "user_id", null: false
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "title"
     t.text "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -32,21 +32,23 @@ ActiveRecord::Schema.define(version: 2020_02_13_115956) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
-    t.string "remember_digest"
+    t.string "name"
     t.boolean "admin", default: false
-    t.string "activation_digest"
-    t.boolean "activated", default: false
-    t.datetime "activated_at"
-    t.string "reset_digest"
-    t.datetime "reset_sent_at"
+    t.string "provider"
+    t.string "uid"
+    t.text "image"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "answers", "users"
   add_foreign_key "questions", "users"
 end

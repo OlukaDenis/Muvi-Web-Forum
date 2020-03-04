@@ -1,15 +1,13 @@
 
-  <p>
-  <strong>Answered by:</strong>
-    <%= answer.answerer %>
-  </p>
-
-  <p>
-  <strong>Answer:</strong>
-    <%= answer.body %>
-  </p>
-  <%= link_to '',[answer.question, answer],
-            method: :delete,
-            data: { confirm: 'You are about delete this answer, Are you sure?'},
-            :class => 'btn btn-danger fa fa-trash' %>
+<div class='question-answers-section'>
+  <% @question.answers.each do |answer| %>
+    <div class="question-answers">
+    <%= link_to gravatar_for(@question.user, size: 20), @question.user %>
+      <p>
+        <b><%= answer.user.name %>:</b> <%= answer.content %>
+      </p>
+      <span> <%= answer_date(answer) %> </span>
+    </div>
+  <% end %>
+</div>
             

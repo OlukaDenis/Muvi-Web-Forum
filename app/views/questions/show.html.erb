@@ -1,28 +1,32 @@
-<% provide(:title, "#{@question.title}") %>
+<% provide(:title, "#{@question.body}") %>
 
 <div class = "container top-show-container">
   <div class="row">
     <div class="col-lg-8">
       <div class="card">
-          <div class="card-header bg-light">
-            <h3><%= @question.title%></h3>
-          </div>
           <div class="card-body bg-light">
-            <p><%= @question.body%></p>
+            <div class="user-link">
+              <%= link_to gravatar_for(@question.user, size: 20), @question.user %>
+              <p>
+                <%= @question.user.name %> <span> <%= question_date(@question) %> </span>
+              </p>
+            </div>
+             
+            <h3><%= @question.body %></h3>
 
-            <h2>Answers</h2>
-            <%= render @question.answers%>
-
-            <h2>Add your answer:</h2>
-              <%= render 'answers/form'%>
-
+            <% if !@question.answers.empty? %>
+              <hr/>
+              <%= render 'answers/answer' %>
+            <% end %>
+            
+            <hr/>
+            <%= render 'answers/answer_form' %>
             <div>
-            <%= link_to ' Answer', '#', :class => 'btn btn-default fa fa-comment' %>
-            <%= link_to ' Edit', edit_question_path(@question), :class => 'btn btn-default fa fa-edit ' %>
-            <%= link_to ' Delete', question_path(@question),
-            method: :delete,
-            data: { confirm: 'You are about delete this question, Are you sure?'},
-            :class => 'btn btn-default fa fa-trash' %>
+              <%= link_to ' Edit', edit_question_path(@question), :class => 'btn btn-default fa fa-edit ' %>
+              <%= link_to ' Delete', question_path(@question),
+              method: :delete,
+              data: { confirm: 'You are about delete this question, Are you sure?'},
+              :class => 'btn btn-default fa fa-trash' %>
             </div>
           </div>
       </div>
@@ -30,9 +34,17 @@
     <div class="col-lg-4">
       <div class="card">
         <div class="card-header text-center">
-          <h5> Recent Questions </h5>
+          <h5> Most Recent </h5>
         </div>
-
+        
+        <div class="card-body">
+          <% if @most_recent_questions.any? %>
+            <ol class="questions">
+                <%= render 'questions/most_recent' %>
+            </ol>
+          <% end %>
+        </div>
+        
         <div class="card-body">
           </div>
 

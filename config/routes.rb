@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # get 'users/new'
   root   'static_pages#home'
   get    '/home',    to: 'static_pages#home'
@@ -14,6 +15,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :questions do
-    resources :answers
+    resources :answers, only: [:create, :destroy]
   end
 end

@@ -1,7 +1,6 @@
 <%= form_for(@question) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">
-        <%= f.text_field :title, placeholder: "Title", class: 'form-control'%>
         <%= f.text_area :body, placeholder: "Compose new question...", class: 'form-control' %>
     </div>
     <%= f.submit "Post Question", class: "btn btn-primary" %>

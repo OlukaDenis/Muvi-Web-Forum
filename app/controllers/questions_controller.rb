@@ -1,11 +1,10 @@
 class QuestionsController < ApplicationController
-  # http_basic_authenticate_with name: "denis", password: "15qwerty", except: [:index, :show]
-  before_action :logged_in_user, only: [:create, :destroy, :new]
+  before_action :authenticate_user!, only: [:create, :destroy, :new]
   before_action :correct_user,   only: :destroy
   
   def index
     @questions = Question.paginate(page: params[:page])
-    if logged_in?
+    if current_user
       @question = current_user.questions.build
       # @feed_items = current_user.feed.paginate(page: params[:page])
     end
@@ -44,6 +43,8 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answer = Answer.new
+    @most_recent_questions = Question.ordered_most_recent
     # render json: @question
   end
 
@@ -56,7 +57,7 @@ class QuestionsController < ApplicationController
   private
     def question_params
       # params.require(:question).permit(:title, :body, :picture)
-      params.require(:question).permit(:title, :body)
+      params.require(:question).permit(:body)
 
     end
 
