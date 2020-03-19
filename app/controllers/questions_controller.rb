@@ -18,8 +18,8 @@ class QuestionsController < ApplicationController
       @feed_items = [] #Adding an (empty) @feed_items instance variable to the create action.     
       redirect_to questions_path
     else
-      # format.json { render json: @question.errors, status: :unprocessable_entity }
-      render root_url
+      redirect_to questions_path
+      flash[:danger] = "Error while posting the question."
     end
   end
 
