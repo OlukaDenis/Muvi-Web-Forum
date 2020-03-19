@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  # get 'users/new'
+  devise_for :users,  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
   root   'static_pages#home'
   get    '/home',    to: 'static_pages#home'
   get    '/help',    to: 'static_pages#help'
@@ -14,6 +15,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :questions do
-    resources :answers
+    resources :answers, only: [:create, :destroy]
   end
 end

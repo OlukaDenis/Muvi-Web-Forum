@@ -8,4 +8,12 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def question_date(question)
+    question.created_at.strftime('%b %d, %Y at %I:%M %p')
+  end
+
+  def answer_date(answer)
+    "#{time_ago_in_words(answer.created_at)} ago"
+  end
 end

@@ -1,20 +1,19 @@
 <%= form_for(@question) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">
-        <%= f.text_field :title, placeholder: "Title", class: 'form-control'%>
         <%= f.text_area :body, placeholder: "Compose new question...", class: 'form-control' %>
     </div>
     <%= f.submit "Post Question", class: "btn btn-primary" %>
     <span class="picture">
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+        <%# <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
     </span>
 <% end %>
 
-<script type="text/javascript">
+<!--script type="text/javascript">
     $('#question_picture').bind('change', function() {
         var size_in_megabytes = this.files[0].size/1024/1024;
         if (size_in_megabytes > 5) {
         alert('Maximum file size is 5MB. Please choose a smaller file.');
         }
     });
-</script>
+</script-->

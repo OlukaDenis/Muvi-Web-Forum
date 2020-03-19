@@ -6,6 +6,7 @@
         <div class="card mb-2">
           <div class="card-body bg-light p-3">
             <h3> Recent Questions </h3>
+            <hr/>
             <%= render 'shared/all_questions' %>
           </div>
         </div>
@@ -14,7 +15,7 @@
     <div class="col-lg-4">
       <div class="card ">
         <div class="card-body bg-light">
-          <% if logged_in? %>
+          <% if current_user %>
             <section class="user_info">
               <%= render 'shared/user_info' %>
               <hr>
@@ -25,7 +26,7 @@
           <% else %>
             <div  class="text-center" >
               <p>Join the Muvi community today and experience the power of knowledge. Get started now!</p>
-              <%= link_to "Login to Ask Question", login_path, class: "btn btn-primary btn-question"%>
+              <%= link_to "Login to Ask Question", new_user_session_path, class: "btn btn-primary btn-question"%>
             </div>
           <% end %>
         </div>

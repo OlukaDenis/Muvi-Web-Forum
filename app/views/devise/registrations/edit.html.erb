@@ -1,0 +1,55 @@
+
+<% provide(:title, "Edit User") %>
+<% provide(:button_text, "Save Changes")%>
+<% provide(:button_class, "btn btn-success")%>
+
+<div class="container">
+    <div class="row edit-row">
+        <div id="signup-card" class="card col-md-8">
+        <div  class="card-body">
+        <h1 class="text-center">Update Your Profile</h1>
+            <div class="gravatar_edit">
+                <%= gravatar_for @user %>
+                <a href="http://gravatar.com/emails" target="_blank">Change</a>
+            </div>
+            
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              
+              <%= form.label :name %>
+              <%= form.text_field :name, autofocus: true, autocomplete: "name", :class => 'form-control' %>
+
+              <%= form.label :email %>
+              <%= form.text_field :email, autofocus: true, autocomplete: "email", :class => 'form-control' %>
+
+              <%= form.label :password %><i>(leave blank if you don't want to change it)</i>
+              <%= form.password_field :password, autocomplete: "new-password", :class => 'form-control' %>
+
+              <div class="password-hint">
+                  <p>Passwords must contain at least 6 characters and contain at least one uppercase, one lowercase and a number!</p>
+              </div>
+
+              <%= form.label :password_confirmation %>
+              <%= form.password_field :password_confirmation, autocomplete: "new-password",  :class => 'form-control' %>
+
+              <%= form.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+              <%= form.password_field :current_password, autocomplete: "current-password", class: 'form-control'%>
+
+              <%= form.submit yield(:button_text), class: yield(:button_class) %>
+              
+          <% end %>
+        </div>
+        </div>
+    </div>
+
+  <div class="row">
+    <div id="delete-card" class="card col-md-8">
+      <div  class="card-body ">
+          <h3 class="text-danger">Danger Zone</h3>
+          <hr>
+          <%= button_to "Delete my account", registration_path(resource_name), class: 'btn btn-danger', data: { confirm: "Are you sure?" }, method: :delete %>
+          
+      </div>
+    </div>
+  </div>
+</div>

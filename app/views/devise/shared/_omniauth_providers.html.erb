@@ -1,0 +1,24 @@
+<div class="signin-with text-center"> 
+    <ul>
+        <li class="facebook">
+            <span>
+                <i class="fab fa-facebook-square text-white"></i>
+                <%= link_to "Facebook", user_facebook_omniauth_authorize_path %>
+            </span>
+        </li>
+
+        <li class="google">
+            <span>
+                <i class="fab fa-google text-white"></i>
+                <%= link_to "Google", user_google_oauth2_omniauth_authorize_path %>
+            </span>
+        </li>
+
+        <li class="github">
+            <span>
+                <i class="fab fa-github text-white"></i>
+                <%= link_to "GitHub", user_github_omniauth_authorize_path %>
+            </span>
+        </li>
+    </ul>
+</div>

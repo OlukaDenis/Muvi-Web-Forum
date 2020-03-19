@@ -1,0 +1,4 @@
+<%= form_for(@answer, url: question_answers_path(@question)) do |form| %>
+    <%= form.text_field :content, id: :answer_content, placeholder: 'Add new answer', class: 'form-control' %>
+    <%= form.submit 'Answer', class: 'btn btn-primary btn-sm' %>
+<% end %>
