@@ -291,10 +291,14 @@ Devise.setup do |config|
   #   include Turbolinks::Controller
   # end
 
-  config.omniauth :facebook, "194946075098357", "c4f77008febe2aace8bf01efd7508ec5"
-  config.omniauth :google_oauth2, '579397286352-8ttm557gfd10ita208r26d3oo06nkrvc.apps.googleusercontent.com', 
-                                  'rBBb8vsbeekYK044uA8QzV6l', {}
-  config.omniauth :github, "3b15b56776d7ca1a8fea", "da9f35feba4c774d64389447f84ce4162a41b80c", scope: "user.email"
+  config.omniauth :facebook, Rails.application.credentials.dig(:facebook, :facebook_client_id), 
+  Rails.application.credentials.dig(:facebook, :facebook_client_secret), scope: 'public_profile,email'
+
+  config.omniauth :google_oauth2, Rails.application.credentials.dig(:google, :google_client_id), 
+  Rails.application.credentials.dig(:google, :google_client_secret), scope: 'userinfo.email,userinfo.profile'
+
+  config.omniauth :github, Rails.application.credentials.dig(:github, :github_client_id),
+  Rails.application.credentials.dig(:github, :github_client_secret), scope: 'user,public_repo'
 
   # ==> Configuration for :registerable
 

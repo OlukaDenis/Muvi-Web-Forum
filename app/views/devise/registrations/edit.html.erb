@@ -1,48 +1,55 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<% provide(:title, "Edit User") %>
+<% provide(:button_text, "Save Changes")%>
+<% provide(:button_class, "btn btn-success")%>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+<div class="container">
+    <div class="row edit-row">
+        <div id="signup-card" class="card col-md-8">
+        <div  class="card-body">
+        <h1 class="text-center">Update Your Profile</h1>
+            <div class="gravatar_edit">
+                <%= gravatar_for @user %>
+                <a href="http://gravatar.com/emails" target="_blank">Change</a>
+            </div>
+            
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
+              <%= render "devise/shared/error_messages", resource: resource %>
+              
+              <%= form.label :name %>
+              <%= form.text_field :name, autofocus: true, autocomplete: "name", :class => 'form-control' %>
+
+              <%= form.label :email %>
+              <%= form.text_field :email, autofocus: true, autocomplete: "email", :class => 'form-control' %>
+
+              <%= form.label :password %><i>(leave blank if you don't want to change it)</i>
+              <%= form.password_field :password, autocomplete: "new-password", :class => 'form-control' %>
+
+              <div class="password-hint">
+                  <p>Passwords must contain at least 6 characters and contain at least one uppercase, one lowercase and a number!</p>
+              </div>
+
+              <%= form.label :password_confirmation %>
+              <%= form.password_field :password_confirmation, autocomplete: "new-password",  :class => 'form-control' %>
+
+              <%= form.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+              <%= form.password_field :current_password, autocomplete: "current-password", class: 'form-control'%>
+
+              <%= form.submit yield(:button_text), class: yield(:button_class) %>
+              
+          <% end %>
+        </div>
+        </div>
+    </div>
+
+  <div class="row">
+    <div id="delete-card" class="card col-md-8">
+      <div  class="card-body ">
+          <h3 class="text-danger">Danger Zone</h3>
+          <hr>
+          <%= button_to "Delete my account", registration_path(resource_name), class: 'btn btn-danger', data: { confirm: "Are you sure?" }, method: :delete %>
+          
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
