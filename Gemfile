@@ -27,6 +27,12 @@ gem 'jbuilder', '2.9.1'
 gem 'rubocop', '0.77.0'
 gem 'bootsnap', '1.4.2', require: false
 
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
+gem 'activerecord-session_store'
+
 group :development, :test do
   gem 'sqlite3', '1.4.1'
   gem 'byebug', platforms: :mri

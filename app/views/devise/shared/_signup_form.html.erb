@@ -1,0 +1,29 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    
+    <%= form.label :name %>
+    <%= form.text_field :name, autofocus: true, autocomplete: "name", :class => 'form-control' %>
+
+    <%= form.label :email %>
+    <%= form.text_field :email, autofocus: true, autocomplete: "email", :class => 'form-control' %>
+
+    <%= form.label :password %>
+    <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= form.password_field :password, autocomplete: "new-password", :class => 'form-control' %>
+
+    <div class="password-hint">
+        <p>Passwords must contain at least 6 characters and contain at least one uppercase, one lowercase and a number!</p>
+    </div>
+
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, autocomplete: "new-password",  :class => 'form-control' %>
+
+    <%= form.submit yield(:button_text), class: yield(:button_class) %>
+    
+<% end %>
+
+<div class="text-center">
+    <p class="mt-20">Already have one? <%= link_to 'Login now!', new_session_path(resource_name) %> </p>
+</div>

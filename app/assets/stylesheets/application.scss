@@ -22,6 +22,8 @@
 $primary-color: #efefef;
 $gray: rgb(151, 151, 151);
 $dark-gray: #c4c4c4;
+$blackish: #444;
+$info-bg: rgba(231, 240, 245, 0.712);
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -33,6 +35,10 @@ body {
   font-family: 'Titillium Web', sans-serif;
   background-color: $primary-color;
   margin-top: 65px;
+}
+
+ul {
+  list-style-type: none;
 }
 
 /* NAV LOGO */
@@ -116,44 +122,28 @@ footer {
   margin-bottom: 100px;
 }
 #signup-card {
-  max-width: 600px;
-  margin-bottom: 100px;
   margin: 0 auto;
 
 
     input, textarea, select, .uneditable-input {
       border: 1px solid #bbb;
-      width: 100%;
+      // width: 100%;
       margin-bottom: 15px;
       @include box_sizing;
+    }
+
+    input[type="submit"]{
+      width: 100%;
     }
 
     input {
       height: auto !important;
     }
 
-  .rem-pass {
-    font-size: 14px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
+}
 
-    .checkbox {
-      margin-top: -10px;
-      margin-bottom: 10px;
-      span {
-        font-weight: normal;
-        cursor: pointer;
-      }
-    }
-
-    #session_remember_me {
-      width: auto;
-      cursor: pointer;
-    }
-  }
-
+#delete-card{
+  margin: 80px auto;
 }
 
 
@@ -207,11 +197,11 @@ aside {
 #muvi-logo {
   // margin-top: 50px;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 8px;
   background-color: white;
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 /* Questions list */
@@ -221,13 +211,25 @@ aside {
   padding: 0;
   li {
     padding: 10px 0;
-    border-top: 1px solid #cac9c9;
+    border-bottom: 1px solid #cac9c9;
   }
   .user {
-    margin-top: 5em;
-    padding-top: 0;
+    padding: 0 0 6px;
     font-size: 14px;
+
+    .user-name{
+      a{
+        color: $blackish;
+        font-weight: bold;
+      }
+    }
+
+    .timestamp {
+      color: $gray;
+      margin-left: 6px;
+    }
   }
+
   .title {
     display: block;
     font-size: 18px;
@@ -238,26 +240,40 @@ aside {
 
   .body {
     display: block;
-    // margin-left: 60px;
-    // img {
-    //   display: block;
-    //   padding: 5px 0;
-    // }
   }
 
   .qtn-picture {
     height: 200px;
   }
-  .timestamp {
-    color: $gray;
-    display: block;
-    font-size: 14px;
-    // margin-left: 60px;
-  }
+  
   .gravatar {
     float: left;
     margin-right: 10px;
     // margin-top: 5px;
+  }
+
+  .question-info {
+    padding-top: 6px;
+    font-size: 14px;
+
+    span{
+      padding: 4px 8px;
+      border-radius: 10px;
+      background-color: $info-bg;
+    }
+
+    .q-answers{
+      margin-right: 6px;
+      color: #777;
+    }
+
+    .q-delete {
+      font-size: 12px;
+      svg{
+        // height: 15px;
+        font-size: 10px;
+      }
+    }
   }
 }
 
@@ -272,5 +288,73 @@ span.picture {
   margin-top: 10px;
   input {
     border: 0;
+  }
+}
+
+.timestamp {
+  color: $gray;
+}
+
+/*-------Sign in with -----------*/
+
+.divider {
+  padding: 6px;
+}
+.signin-with {
+  padding: 16px 0;
+  .divider {
+     padding-top: 16px;
+     border-bottom: 1px solid grey;
+     position: relative;
+
+     span{
+        top: -20px;
+        color: gray;
+     }
+  }
+
+  h6{
+     padding: 8px 0;
+     color: gray;
+  }
+  a{
+     text-decoration: none;
+     color: white;
+  }
+
+  .facebook{
+     background-color: #3b5998;
+     &:hover{
+        background-color: #4d6eb1;
+     }
+  }
+
+  .google {
+     background-color: #DB4437;
+     &:hover{
+        background-color: rgb(226, 81, 68);
+     }
+  }
+
+  .github {
+     background-color: #24292e;
+     &:hover{
+        background-color: #383b3d;
+     }
+  }
+
+  ul{
+     display: inline-flex;
+     li{
+        cursor: pointer;
+        padding: 6px 12px;
+        border-radius: 4px;  
+        margin-right: 12px;    
+        span{
+           a {
+              padding-left: 8px;
+           }
+        }
+     }
   }
 }

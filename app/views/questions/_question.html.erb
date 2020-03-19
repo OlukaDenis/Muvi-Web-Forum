@@ -1,17 +1,24 @@
 <li id="question-<%= question.id %>">
-  <%= link_to gravatar_for(question.user, size: 20), question.user %>
-  <span class="user"><%= link_to question.user.name, question.user %></span>
-  <%= link_to question.title, question_path(question), class: "title" %>
-  <span class="body">
-    <%= question.body %>    
-  </span>
-  <%= image_tag question.picture.url, class: "qtn-picture" if question.picture? %>
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(question.created_at) %> ago.
-    <% if current_user?(question.user) %>
-      <%= link_to " Delete", question, method: :delete,
-                                      data: { confirm: "You are about to delete this question. Are you sure?" },
-                                            class: 'fa fa-trash text-danger' %>
+  <div class="user">
+    <%= link_to gravatar_for(question.user, size: 20), question.user %>
+    <span class="user-name"><%= link_to question.user.name, question.user %></span>
+    <span class="timestamp"> <%= question_date(question) %> </span>
+  </div>
+  <%= link_to question.body, question_path(question), class: "title" %>
+  <%# <%= image_tag question.picture.url, class: "qtn-picture" if question.picture? %>
+  <p class="question-info">
+    <span class="q-answers">
+      <i class="fas fa-comments"></i>
+      <%= question.answers.count %> Answers
+    </span>
+
+    <% if current_user == question.user %>
+      <span class="q-delete">
+          <i class="fas fa-trash text-danger"></i>
+          <%= link_to " Delete", question, method: :delete,
+                                          data: { confirm: "You are about to delete this question. Are you sure?" },
+                                                class: 'text-danger' %>        
+      </span>
     <% end %>
-  </span>
+  </p>
 </li>

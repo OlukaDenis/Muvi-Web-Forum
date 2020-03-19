@@ -1,0 +1,19 @@
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |form| %>
+    <%# <%= render 'shared/error_messages', object: form.object %> 
+
+    <%= form.label :email %>
+    <%= form.text_field :email, autofocus: true, autocomplete: "email", :class => 'form-control' %>
+
+    <%= form.label :password %>
+    <%= form.password_field :password, autocomplete: "current-password", :class => 'form-control' %>
+
+    <% if devise_mapping.rememberable? %>
+        <div class="rem-field">
+            <%= form.check_box :remember_me %>
+            <%= form.label :remember_me %>
+        </div>
+    <% end %>
+
+    <%= form.submit 'Login', :class => 'btn btn-primary' %>
+    <%= link_to 'Forgot password?', new_password_path(resource_name) %>
+<% end %>

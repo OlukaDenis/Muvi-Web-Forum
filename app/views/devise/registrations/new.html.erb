@@ -1,0 +1,30 @@
+
+<% provide(:title, "Sign Up") %>
+<% provide(:button_text, "Create Account")%>
+<% provide(:button_class, "btn btn-primary")%>
+
+<div class="text-center heading-section">
+  <%= image_tag("muvilogo.png", class: "img-responsive", id: "muvi-logo") %>
+  <h4>Create an account for Muvi</h4>
+</div>
+
+<div class="container content-container">
+  <div class="row">
+    <div id="signup-card" class="card col-md-6 col-md-offset-3">
+      <div  class="card-body">
+        <%= render 'devise/shared/signup_form'%>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+    <h6 class="text-center divider"> OR </h6>
+    </div>
+  </div>
+  <div class="row">
+    <div id="signup-card" class="card sign-with-layout col-md-6 col-md-offset-3">
+      <%= render 'devise/shared/omniauth_providers'%>
+    </div>
+  </div>
+  
+</div>

@@ -1,46 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-denis:
-  name: Denis Oluka
-  email: olukadeno@gmail.com
-  password_digest: <%= User.digest('Password1') %>
-  admin: true
-  activated: true
-  activated_at: <%= Time.zone.now %>
-
-michael:
-  name: Michael Example
-  email: michael@example.com
-  password_digest: <%= User.digest('Password1') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
-
-archer:
-  name: Sterling Archer
-  email: duchess@example.gov
-  password_digest: <%= User.digest('Password1') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
-
-lana:
-  name: Lana Kane
-  email: hands@example.gov
-  password_digest: <%= User.digest('Password1') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
-
-malory:
-  name: Malory Archer
-  email: boss@example.gov
-  password_digest: <%= User.digest('Password1') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
-
-<% 40.times do |n| %>
-user_<%= n %>:
-  name:  <%= "User #{n}" %>
-  email: <%= "user-#{n}@example.com" %>
-  password_digest: <%= User.digest('Password1') %>
-  activated: true
-  activated_at: <%= Time.zone.now %>
-<% end %>
+# This model initially had no columns defined. If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+one: {}
+# column: value
+#
+two: {}
+# column: value

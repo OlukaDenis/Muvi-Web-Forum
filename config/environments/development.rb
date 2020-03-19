@@ -64,7 +64,7 @@ Rails.application.configure do
   # config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   # Use this if developing on localhost.
   # config.action_mailer.default_url_options = { host: host, protocol: 'http' }
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: '3000' }
 
   #-----------------------------------------------------------------------------------
   #              END DEVELOPMENT CONFIGURATION
