@@ -1,34 +1,96 @@
-# Ruby on Rails Tutorial sample application
+# Project: Muvi Web Forum
 
-This is the sample application for
-[_Ruby on Rails Tutorial:
-Learn Web Development with Rails_](https://www.railstutorial.org/).
+This is a web forum platform for the [Muvi](https://github.com/OlukaDenis/Muvi) mobile app. 
 
-## Getting started
+## Screenshot
+![muvi](https://user-images.githubusercontent.com/37341054/79591596-6d6bce00-80e1-11ea-9e2e-9a5c3c272cf2.png)
 
-To get started with the app, clone the repo and then install the needed gems:
+## Built With
+- HTML
+- Ruby
+- Ruby On Rails
+- SASS/CSS
 
+## Live Demo
+[Live here](https://muvi-web-forum.herokuapp.com/)
+
+
+## Prerequisites
+
+- Ruby: 2.7.0
+- Rails: 6.0.2.1
+- Postgres: >=9.5
+
+## Functionalities 
+- Create an account
+- Login to your account
+- Create a new question
+- Like and answer on questions
+- Link to download the app from Google Play Store
+- Logout of the application
+
+## Setup
+
+Use the [git](https://git-scm.com/downloads) to clone the project to your local machine.
+```sh
+$ git clone https://github.com/OlukaDenis/Muvi-Web-Forum.git
 ```
-$ bundle install --without production
+
+Navigate to the extracted folder
+```sh
+$ cd Muvi-Web-Forum
 ```
 
-Next, migrate the database:
-
+Install the gems
+```sh
+$ bundle install
 ```
+
+Create the database
+```sh
+$ rails db:create
+```
+
+Run the migrations
+```sh
 $ rails db:migrate
 ```
 
-Finally, run the test suite to verify that everything is working correctly:
 
-```
-$ rails test
-```
+### Usage
 
-If the test suite passes, you'll be ready to run the app in a local server:
+Start server with:
 
-```
-$ rails server
+```sh
+    rails server
 ```
 
-For more information, see the
-[_Ruby on Rails Tutorial_ book](https://www.railstutorial.org/book).
+Open `http://localhost:3000/` in your browser.
+
+### Run tests
+
+```
+    rpsec --format documentation
+```
+
+## Authors
+
+👤 **Denis Oluka**
+
+[Github](https://github.com/OlukaDenis) | [Twitter](https://twitter.com/dennylucaz) | [LinkedIn](https://linkedin.com/in/denis-oluka-)
+
+TBA
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+
+## 📝 License
+
+This project is licensed under MIT license - see [LICENSE]() for more details.
+
