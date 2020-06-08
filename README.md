@@ -29,6 +29,9 @@ This is a web forum platform for the [Muvi](https://github.com/OlukaDenis/Muvi) 
 - Link to download the app from Google Play Store
 - Logout of the application
 
+## Future work
+- Following users and user stories
+
 ## Setup
 
 Use the [git](https://git-scm.com/downloads) to clone the project to your local machine.
