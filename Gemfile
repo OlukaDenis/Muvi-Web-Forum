@@ -17,7 +17,7 @@ gem 'will_paginate', '3.2.1'
 # gem 'bootstrap-will_paginate', '1.0.0'
 gem 'will_paginate-bootstrap4', '0.2.2'
 gem 'bootstrap', '4.4.1'
-gem 'puma', '4.3.5'
+gem 'puma', '5.6.2'
 gem 'font-awesome-rails', '4.7.0.5'
 gem 'sprockets-rails', '3.2.1'
 gem 'sass-rails', '6'
@@ -55,7 +55,7 @@ end
 
 group :production do
   gem 'pg',  '0.20.0'
-  gem 'puma', '4.3.5'
+  gem 'puma', '5.6.2'
   gem 'fog', '1.42'
 end
 
